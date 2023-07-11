@@ -1,4 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --yellow: #f4ce14;
+}
+
 * {
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header_wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.header_logo {
+  margin-right: 40px;
+}
+
+.nav_list {
+  display: flex;
+  padding: 0;
+}
+
+.nav_list__item {
+  list-style: none;
+}
+
+.nav_list__item + .nav_list__item {
+  margin-left: 20px;
+}
+
+.nav_list__item-link {
+  text-decoration: none;
+  font-family: 'Karla';
+  font-size: 20px;
+  color: #000;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.s-hero {
+  background: #495e57;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.s-hero .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.s-hero_image {
+  position: relative;
+  right: 0;
+  bottom: -50px;
+  width: 375px;
+  height: 400px;
+  background-size: cover;
+  background-image: url('./icons_assets/restauranfood.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  margin-left: 40px;
+}
+
+.s-hero_title {
+  font-family: 'Markazi Text';
+  font-size: 64px;
+  color: var(--yellow);
+  margin: 0;
+}
+
+.s-hero_subtitle {
+  color: #edefee;
+  font-family: 'Markazi Text';
+  font-size: 40px;
+}
+
+.s-hero_description {
+  font-family: 'Karla';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  display: block;
+  max-width: 267px;
+  padding-bottom: 27px;
+}
+
+.styled-button {
+  border-radius: 12px;
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: 10px 25px;
+  color: #fff;
+}
+
+.s-highlights {
+  padding: 70px 0 30px;
+}
+
+.s-highlights_title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.s-highlights_title {
+  font-family: 'Markazi Text';
+  font-size: 64px;
+  margin: 0;
+}
+
+.cards_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 34px;
+  padding: 0;
+}
+
+.cards_list_item {
+  list-style: none;
+  background: #edefee;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.cards_list_item__content {
+  padding: 20px;
+}
+
+.cards_list_item__image {
+  width: 100%;
+  height: 185px;
+  position: relative;
+}
+
+.cards_list_item__image img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards_list_item__title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards_list_item__title {
+  font-family: 'Markazi Text';
+  font-size: 24px;
+  margin: 0;
+}
+
+.cards_list_item__price {
+  font-family: 'Karla';
+  color: #ee9972;
+  font-size: 16px;
+}
+
+.cards_list_item__descr {
+  color: #495e57;
+  font-family: 'Karla';
+  font-size: 16px;
+}
+
+.cards_list_item__button {
+  background-color: inherit;
+  color: #000;
+  border: none;
+  padding: 0;
+  font-family: 'Karla';
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav_list {
+    display: none;
+  }
+  .nav-mobile {
+    display: block;
+  }
+  .s-hero_image {
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+  }
+  .s-hero_title,
+  .s-highlights_title {
+    font-size: 58px;
+  }
+  .s-hero_subtitle {
+    font-size: 32px;
+  }
+  .s-hero_description {
+    font-size: 18px;
+  }
+  .s-highlights_title-wrap {
+    display: block;
+  }
+  .s-highlights button {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards_list {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 34px;
+  }
+  .s-hero_title,
+  .s-highlights_title {
+    font-size: 50px;
+  }
+  .s-hero_subtitle {
+    font-size: 28px;
+  }
+  .s-hero_image {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-hero_image {
+    display: none;
+  }
+
+  .s-hero_description {
+    max-width: 100%;
+  }
+  .s-highlights_title {
+    font-size: 48px;
+  }
+}

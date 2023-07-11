@@ -1,0 +1,57 @@
+.s-reservation {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: start;
+  width: 380px;
+  color: #000;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.f-reservation_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-reservation_item + .f-reservation_item {
+  margin-top: 15px;
+}
+
+.f-reservation_label {
+  font-family: 'Karla';
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.f-reservation_field {
+  width: 300px;
+  height: 35px;
+  font-family: 'Karla';
+  font-size: 20px;
+  border: 1px solid #000;
+  padding: 0 5px;
+}
+
+.f-reservation_field-error {
+  color: red;
+  font-family: 'Karla';
+  font-size: 12px;
+}
+
+.f-reservation_button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media (max-width: 568px) {
+  .s-reservation {
+    width: 280px;
+  }
+  .f-reservation_field {
+    width: 240px;
+  }
+}

@@ -1,3 +1,5 @@
-export {Header} from './Header'
-export {Footer} from './Footer'
-export {Main} from './Main'
+export { Header } from './Header'
+export { Footer } from './Footer'
+export { Main } from './Main'
+export { ModalWindow } from './ModalWindow/ModalWindow'
+export { ReservationForm } from './ReservationForm'
