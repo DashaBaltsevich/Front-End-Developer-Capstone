@@ -1,43 +1,49 @@
-import Hamburger from '../icons_assets/🦆 icon _hamburger menu.svg'
-
-export const Nav = () => {
+export const Nav = ({ isMobileMenuVisible, setIsMobileMenuVisible }) => {
+  const navList = [
+    {
+      name: 'Home',
+      href: '/'
+    },
+    {
+      name: 'About',
+      href: '/'
+    },
+    {
+      name: 'Menu',
+      href: '/'
+    },
+    {
+      name: 'Reservations',
+      href: '/'
+    },
+    {
+      name: 'Order online',
+      href: '/'
+    },
+    {
+      name: 'login',
+      href: '/'
+    }
+  ]
   return (
-    <nav>
-      <ul className="nav_list">
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            Home
-          </a>
-        </li>
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            About
-          </a>
-        </li>
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            Menu
-          </a>
-        </li>
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            Reservations
-          </a>
-        </li>
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            Order online
-          </a>
-        </li>
-        <li className="nav_list__item">
-          <a href="/" className="nav_list__item-link">
-            login
-          </a>
-        </li>
-      </ul>
-      <div className="nav-mobile">
-        <img src={Hamburger} alt="" />
-      </div>
-    </nav>
+    <div className={isMobileMenuVisible && 'nav_list-mobile-wrap'}>
+      <nav>
+        <ul className={isMobileMenuVisible ? 'nav_list-mobile' : 'nav_list'}>
+          {navList.map((el, i) => (
+            <li className="nav_list__item" key={i}>
+              <a href={el.href} className="nav_list__item-link">
+                {el.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {isMobileMenuVisible && (
+        <button
+          className="nav-mobile-close_button"
+          onClick={() => setIsMobileMenuVisible(false)}
+        ></button>
+      )}
+    </div>
   )
 }

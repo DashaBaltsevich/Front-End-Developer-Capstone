@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import styles from './ModalWindow.css'
+import './ModalWindow.css'
 
 export const ModalWindow = ({ setIsFormVisible, children }) => {
   const div = document.createElement('div')

@@ -20,7 +20,6 @@ export const ReservationForm = ({ setIsFormReservationVisible }) => {
         onSubmit={(values) => {
           dispatch({ type: 'RESERVE', payload: { values } })
           setIsFormReservationVisible(false)
-          console.log(values)
         }}
         validationSchema={yup.object({
           date: yup
@@ -32,7 +31,7 @@ export const ReservationForm = ({ setIsFormReservationVisible }) => {
         })}
       >
         {({ values, setFieldValue }) => (
-          <Form>
+          <Form data-testid="reservation-form">
             <div className="f-reservation_item">
               <label htmlFor="date" className="f-reservation_label">
                 Choose Date
@@ -76,12 +75,6 @@ export const ReservationForm = ({ setIsFormReservationVisible }) => {
                     {el}
                   </option>
                 ))}
-
-                {/* <option value="18:00">18:00</option>
-                <option value="19:00">19:00</option>
-                <option value="20:00">20:00</option>
-                <option value="21:00">21:00</option>
-                <option value="22:00">22:00</option> */}
               </Field>
               <ErrorMessage
                 name="time"
